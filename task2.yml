@@ -1,0 +1,10 @@
+---
+    platform: linux
+    image_resource:
+        type: docker-image
+        source:
+            repository: amazon/aws-cli
+    run:
+        path: aws
+        args:
+        - "sts assume-role --role-arn arn:aws:iam::617007418524:role/automation-concourse --role-session-name s3-access-example"

@@ -10,8 +10,11 @@ jobs:
     - name: test credentials
       plan:
       - get: src
+        trigger: true
       - task: echo
         vars:
-            szymon: "blabla"
+            szymon: ((test))
         file: src/task.yml
+      - task: sts
+        file: src/task2.yml
     
