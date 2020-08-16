@@ -4,6 +4,7 @@ resources:
       source:
         uri: git@github.com:simonkey007/demo_project.git
         branch: master
+        private_key: ((github-private-key))
 
 jobs:
     - name: test credentials
