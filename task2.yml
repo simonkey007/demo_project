@@ -7,5 +7,5 @@
     run:
         path: aws
         args:
-        - s3
-        - ls
+        - sts
+        - assume-role
