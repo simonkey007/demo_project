@@ -1,5 +1,5 @@
 resources:
-    - name: src
+    - name: demo_project
       type: git
       source:
         uri: git@github.com:simonkey007/demo_project.git
@@ -9,12 +9,12 @@ resources:
 jobs:
     - name: test credentials
       plan:
-      - get: src
+      - get: demo_project
         trigger: true
       - task: echo
         vars:
             szymon: ((test))
-        file: src/task.yml
+        file: demo_project/task.yml
       - task: sts
-        file: src/task2.yml
+        file: demo_project/task2.yml
     

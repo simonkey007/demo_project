@@ -5,11 +5,4 @@
         source:
             repository: amazon/aws-cli
     run:
-        path: aws
-        args:
-        - sts
-        - assume-role
-        - --role-session-name
-        - s3-access-example
-        - --role-arn
-        - arn:aws:iam::617007418524:role/automation-concourse
+        path: demo_project/scripts/sts.sh
