@@ -15,6 +15,6 @@ jobs:
         vars:
             szymon: ((test))
         file: demo_project/task.yml
-      - task: sts
+      - task: terraform
         file: demo_project/task2.yml
     
