@@ -1,0 +1,15 @@
+---
+platform: linux
+image_resource:
+    type: docker-image
+    source:
+        repository: hashicorp/terraform
+        tag: 0.12.20
+inputs:
+    - name: demo_project
+run:
+    path: demo_project/scripts/terraform-destroy.sh
+params:
+    TERRAFORM_DIRECTORY: demo_project/terraform
+    TERRAFORM_CONFIG: configs/dev/config.remote
+    TERRAFORM_TFVARS: configs/dev/terraform.tfvars
