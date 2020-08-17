@@ -1,3 +1,3 @@
 region      = "eu-central-1"
-environment = "dev"
+environment = "stage"
 account_id  = "617007418524"
