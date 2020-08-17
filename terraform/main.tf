@@ -4,7 +4,7 @@ terraform {
   backend "s3" {}
 }
 
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "demo-bucket" {
   bucket = "${var.account_id}-demo-project"
   acl    = "private"
 

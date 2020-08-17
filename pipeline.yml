@@ -11,10 +11,10 @@ jobs:
       plan:
       - get: demo_project
         trigger: true
-      - task: echo
+      - task: get-secret-from-vault
         vars:
             szymon: ((test))
         file: demo_project/task.yml
-      - task: terraform
+      - task: create-s3-bucket
         file: demo_project/task2.yml
     
