@@ -11,5 +11,5 @@ run:
     path: demo_project/scripts/terraform-destroy.sh
 params:
     TERRAFORM_DIRECTORY: demo_project/terraform
-    TERRAFORM_CONFIG: configs/dev/config.remote
-    TERRAFORM_TFVARS: configs/dev/terraform.tfvars
+    TERRAFORM_CONFIG: configs/((env))/((region))/config.remote
+    TERRAFORM_TFVARS: configs/((env))/((region))/terraform.tfvars

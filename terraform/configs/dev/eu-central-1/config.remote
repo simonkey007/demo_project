@@ -1,0 +1,5 @@
+region         = "eu-central-1"
+bucket         = "617007418524-tfstate"
+key            = "demo/demo-project/dev/eu-central-1"
+dynamodb_table = "617007418524-tfstate-lock"
+role_arn       = "arn:aws:iam::617007418524:role/automation-concourse"

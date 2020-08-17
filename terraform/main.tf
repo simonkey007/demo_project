@@ -5,7 +5,7 @@ terraform {
 }
 
 resource "aws_s3_bucket" "demo-bucket" {
-  bucket = "${var.account_id}-demo-project"
+  bucket = "${var.account_id}-${var.environment}-demo-project"
   acl    = "private"
 
   versioning {
