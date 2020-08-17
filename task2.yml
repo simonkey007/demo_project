@@ -12,3 +12,4 @@
         - --role-session-name
         - s3-access-example
         - --role-arn
+        - arn\:aws\:iam\:\:617007418524:role\/automation-concourse
