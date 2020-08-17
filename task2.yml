@@ -5,4 +5,4 @@
         source:
             repository: amazon/aws-cli
     run:
-        path: demo_project/scripts/sts.sh
+        path: ls
