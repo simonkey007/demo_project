@@ -6,8 +6,21 @@ resources:
         branch: master
         private_key: ((github-private-key))
 
+groups:
+  - name: eu-central-1
+    jobs:
+    - Create S3 bucket eu-central-1
+  
+  - name: us-east-1
+    jobs:
+    - Create S3 bucket us-east-1
+
+  - name: destroy
+    jobs:
+    - Destroy S3 bucket eu-central-1
+
 jobs:
-    - name: test credentials
+    - name: Create S3 bucket eu-central-1
       plan:
       - get: demo_project
         trigger: true
@@ -17,4 +30,26 @@ jobs:
         file: demo_project/task.yml
       - task: create-s3-bucket
         file: demo_project/task2.yml
+
+    - name: Create S3 bucket us-east-1
+      plan:
+      - get: demo_project
+        trigger: true
+      - task: get-secret-from-vault
+        vars:
+            szymon: ((test))
+        file: demo_project/task.yml
+      - task: create-s3-bucket
+        file: demo_project/task2.yml
+
+    - name: Destroy S3 bucket eu-central-1
+      plan:
+      - get: demo_project
+        trigger: true
+      - task: get-secret-from-vault
+        vars:
+            szymon: ((test))
+        file: demo_project/task.yml
+      - task: destroy-s3-bucket
+        file: demo_project/task3.yml
     
