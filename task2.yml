@@ -5,9 +5,8 @@
         source:
             repository: amazon/aws-cli
     run:
-        path: aws
+        path: sts
         args:
-        - sts
         - assume-role
         - --role-arn
         - arn:aws:iam::617007418524:role/automation-concourse
